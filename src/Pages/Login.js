@@ -4,7 +4,6 @@ import { Button, TextField } from "@mui/material";
 import React from "react";
 import { useForm, Form } from "../CustomHooks/useForm";
 import Inputs from "../Components/Controls/Inputs";
-import axios from "axios";
 import { useHistory } from "react-router";
 import config from "../config.json";
 import httpService from "../Services/httpService";
@@ -15,9 +14,9 @@ const initialFValues = {
 };
 function Login() {
   const history = useHistory();
+
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
-
     if ("email" in fieldValues)
       temp.email = /$^|.+@.+..+/.test(fieldValues.email)
         ? ""

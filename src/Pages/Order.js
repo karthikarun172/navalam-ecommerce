@@ -2,21 +2,14 @@
 
 import React from "react";
 import { useHistory } from "react-router";
+import Layout from "../Components/Layout";
 
 function Order() {
   const history = useHistory();
   return (
-    <div>
-      Order
-      <button
-        onClick={() => {
-          localStorage.removeItem("token");
-          history.push("/login");
-        }}
-      >
-        logout
-      </button>
-    </div>
+    <Layout>
+      <h2>sd</h2>
+    </Layout>
   );
 }
 
