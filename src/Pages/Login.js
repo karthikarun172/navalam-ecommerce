@@ -50,24 +50,56 @@ function Login() {
   };
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-        <Inputs
-          label="Email"
-          name="email"
-          value={values.email}
-          onChange={handleInputChange}
-          error={errors.email}
-        />
-        <Inputs
-          type="password"
-          label="Password"
-          name="password"
-          value={values.password}
-          onChange={handleInputChange}
-        />
-        <button type="submit">login</button>
-      </Form>
+    <div style={{ height: "100vh", backgroundColor: "#1C3FAA" }}>
+      <div
+        style={{
+          height: "90vh",
+          backgroundColor: "#F1F5F9",
+          width: "96%",
+          position: "absolute",
+          transform: `translate(-50%,-50%)`,
+          left: "50%",
+          top: "50%",
+          borderRadius: "30px",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            transform: `translate(-50%,-50%)`,
+            left: "50%",
+            top: "50%",
+            width: "20%",
+          }}
+        >
+          <Form
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-around",
+              height: "200px",
+              width: "300px",
+            }}
+            onSubmit={handleSubmit}
+          >
+            <Inputs
+              label="Email"
+              name="email"
+              value={values.email}
+              onChange={handleInputChange}
+              error={errors.email}
+            />
+            <Inputs
+              type="password"
+              label="Password"
+              name="password"
+              value={values.password}
+              onChange={handleInputChange}
+            />
+            <Button type="submit">login</Button>
+          </Form>
+        </div>
+      </div>
     </div>
   );
 }
