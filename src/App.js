@@ -1,7 +1,5 @@
 /** @format */
 
-import logo from "./logo.svg";
-import "./App.css";
 import Login from "./Pages/Login";
 import Order from "./Pages/Order";
 import Product from "./Pages/Product";
