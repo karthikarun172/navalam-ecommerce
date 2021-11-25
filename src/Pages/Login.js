@@ -12,6 +12,9 @@ import { useState } from "react";
 import { useLottie } from "lottie-react";
 import * as animationData from "../Assests/LoadingAnimation.json";
 import LoadingAnimation from "../Components/LoadingAnimation";
+import Grid from '@mui/material/Grid';
+import CssBaseline from '@mui/material/CssBaseline';
+import Logo from '../Assests/right.png';
 
 const initialFValues = {
   email: "",
@@ -21,7 +24,7 @@ const initialFValues = {
 const styles = makeStyles((theme) => ({
   mainCont: {
     height: "100vh",
-    backgroundColor: "#F1F5F9",
+    backgroundColor: "#698a37",
     ["@media (max-width:780px)"]: {
       backgroundColor: "red",
     },
@@ -91,11 +94,29 @@ function Login() {
           borderRadius: "30px",
         }}
       >
+       <Grid container component="main" sx={{ height: '91vh'}}>
+        <CssBaseline />
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: `url(${Logo})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height:'99%'
+          }}
+        />
+    </Grid>    
         <div
           style={{
             position: "absolute",
             transform: `translate(-50%,-50%)`,
-            left: "50%",
+            left: "75%",
             top: "45%",
             width: "20%",
           }}
@@ -113,7 +134,7 @@ function Login() {
               }}
               onSubmit={handleSubmit}
             >
-              <h2>Sign In</h2>
+              <h2>Login In</h2>
               <Inputs
                 label="Email"
                 name="email"
@@ -128,7 +149,7 @@ function Login() {
                 value={values.password}
                 onChange={handleInputChange}
               />
-              <Button variant="contained" type="submit">
+              <Button variant="contained" type="submit" style={{backgroundColor:'#304F12'}}>
                 login
               </Button>
             </Form>
