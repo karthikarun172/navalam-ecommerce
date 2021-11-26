@@ -15,8 +15,34 @@ function NavBar() {
   return (
     <div>
       <div>
-        <h3>logo</h3>
-        <h5>logo</h5>
+        <div>
+          <h3
+            style={{
+              textAlign: "center",
+              color: "white",
+              fontFamily: "Roboto",
+            }}
+          >
+            Logo
+          </h3>
+          <h5
+            style={{
+              textAlign: "center",
+              color: "white",
+              fontFamily: "Roboto",
+            }}
+          >
+            goes here
+          </h5>
+          <div
+            style={{
+              backgroundColor: "#274AB6",
+              width: "70%",
+              marginLeft: "40px",
+              height: "2px",
+            }}
+          />
+        </div>
         <ul
           style={{
             display: "flex",
@@ -29,7 +55,7 @@ function NavBar() {
           }}
         >
           {navigationRoute.map((navData) => (
-            <NavLink navData={navData} />
+            <NavLink key={navData.id} navData={navData} />
           ))}
         </ul>
       </div>

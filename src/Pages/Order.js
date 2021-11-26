@@ -8,9 +8,18 @@ function Order() {
   const history = useHistory();
   return (
     <Layout>
-      <h2>sd</h2>
-      <h2>sd</h2>
-      <h2>sd</h2>
+      <div style={{ display: "flex" }}>
+        <h2>sd</h2>
+        <h2>sd</h2>
+        <h2>sd</h2>
+        <h2>sd</h2>
+        <h2>sd</h2>
+        <h2>sd</h2>
+        <h2>sd</h2>
+        <h2>sd</h2>
+        <h2>sd</h2>
+        <h2>sd</h2>
+      </div>
     </Layout>
   );
 }

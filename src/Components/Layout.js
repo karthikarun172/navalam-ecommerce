@@ -1,12 +1,18 @@
 /** @format */
 
-import React from "react";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import React, { useEffect } from "react";
 import NavBar from "./NavBar";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 
 function Layout(props) {
+  const theme = useTheme();
+  const mediumScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const largeScreen = useMediaQuery(theme.breakpoints.up("xl"));
+  useEffect(() => {
+    console.log(mediumScreen, "sds");
+  }, []);
+
   return (
     <div>
       <div
@@ -21,7 +27,7 @@ function Layout(props) {
       >
         <div
           style={{
-            width: "13%",
+            width: mediumScreen ? "20%" : "13%",
             backgroundColor: "#1C3FAA",
             height: "auto",
             alignSelf: "flex-start",
@@ -29,14 +35,15 @@ function Layout(props) {
         >
           <NavBar />
         </div>
-        <div style={{ width: "86%" }}>
+        <div style={{ width: mediumScreen ? "78%" : "86%" }}>
           <div
             style={{
               width: "100%",
               backgroundColor: "#F1F5F9",
-              height: "90vh",
-              borderRadius: "24px",
+              height: "120vh",
+              borderRadius: "40px",
               alignSelf: "flex-end",
+              marginTop: "20px",
             }}
           >
             {props.children}
