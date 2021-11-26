@@ -18,7 +18,38 @@ function NavBar() {
   return (
     <div>
       <div>
+<<<<<<< HEAD
         <h5>logo</h5>
+=======
+        <div>
+          <h3
+            style={{
+              textAlign: "center",
+              color: "white",
+              fontFamily: "Roboto",
+            }}
+          >
+            Logo
+          </h3>
+          <h5
+            style={{
+              textAlign: "center",
+              color: "white",
+              fontFamily: "Roboto",
+            }}
+          >
+            goes here
+          </h5>
+          <div
+            style={{
+              backgroundColor: "#274AB6",
+              width: "70%",
+              marginLeft: "40px",
+              height: "2px",
+            }}
+          />
+        </div>
+>>>>>>> 179eb1a7f80b07184e8777b33fe3ecef71c8842b
         <ul
           style={{
             display: "flex",
@@ -30,6 +61,7 @@ function NavBar() {
             marginTop: "50px",
           }}
         >
+<<<<<<< HEAD
           {navigationRoute.map((navData) => {
             return(
             <div>  
@@ -39,6 +71,11 @@ function NavBar() {
          {navigationRoute.map((navData)=>{
            <img src={navData.Logos} />
          })}
+=======
+          {navigationRoute.map((navData) => (
+            <NavLink key={navData.id} navData={navData} />
+          ))}
+>>>>>>> 179eb1a7f80b07184e8777b33fe3ecef71c8842b
         </ul>
       </div>
     </div>
