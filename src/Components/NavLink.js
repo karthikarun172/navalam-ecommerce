@@ -2,23 +2,28 @@
 
 import React from "react";
 import { RiDashboardFill } from "react-icons/ri";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
+import { useState } from "react";
 
 function NavLink({ navData }) {
   const history = useHistory();
+  const location = useLocation();
+
   return (
     <li
       style={{
-        backgroundColor: navData.RouteName ? "#F1F5F9" : "#1C3FAA",
-        color: navData.RouteName ? "#1C3FAA" : "#F1F5F9",
-        padding: "15px",
+        backgroundColor:
+          location.pathname === navData.RouteName ? "#F1F5F9" : "#1C3FAA",
+        color: location.pathname === navData.RouteName ? "#1C3FAA" : "#F1F5F9",
         marginBottom: "20px",
         borderRadius: `30px 0 0 30px`,
-        width: "80%",
+        width: "100%",
         cursor: "pointer",
-        textAlign: "center",
+        height: "auto",
       }}
-      onClick={() => history.push(navData.RouteName)}
+      onClick={() => {
+        history.push(navData.RouteName);
+      }}
       key={navData.id}
     >
       <div
@@ -31,7 +36,7 @@ function NavLink({ navData }) {
         }}
       >
         <RiDashboardFill size={24} />
-        {navData.name}
+        <p style={{ paddingLeft: "10px" }}>{navData.name}</p>
       </div>
     </li>
   );

@@ -1,11 +1,16 @@
-import React from 'react'
+/** @format */
+
+import React from "react";
+import Layout from "../Components/Layout";
 
 function Settings() {
-    return (
-        <div>
-            Settings
-        </div>
-    )
+  return (
+    <Layout>
+      <div>
+        <p>sd</p>
+      </div>
+    </Layout>
+  );
 }
 
-export default Settings
+export default Settings;

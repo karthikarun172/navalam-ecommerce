@@ -29,10 +29,10 @@ function Layout(props) {
         >
           <NavBar />
         </div>
-        <div style={{ width: "49%" }}>
+        <div style={{ width: "86%" }}>
           <div
             style={{
-              width: "175%",
+              width: "100%",
               backgroundColor: "#F1F5F9",
               height: "90vh",
               borderRadius: "24px",
