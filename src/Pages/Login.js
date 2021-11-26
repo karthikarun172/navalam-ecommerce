@@ -70,7 +70,7 @@ function Login() {
           setLoading(false);
           localStorage.setItem("token", res.data.access_token);
           localStorage.setItem("userDetails", JSON.stringify(res.data.user));
-          history.push("/");
+          history.push("/product");
         })
         .catch((er) => {
           console.log(er);
@@ -150,7 +150,7 @@ function Login() {
                 onChange={handleInputChange}
               />
               <Button variant="contained" type="submit" style={{backgroundColor:'#304F12'}}>
-                login
+                login 
               </Button>
             </Form>
           )}
