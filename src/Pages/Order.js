@@ -8,8 +8,8 @@ function Order() {
   const history = useHistory();
   return (
     <Layout>
-      <h2>sd</h2>
-      <h2>sd</h2>
+      <h2>Order</h2>
+      <h2>Order2</h2>
       <h2>sd</h2>
     </Layout>
   );

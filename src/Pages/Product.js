@@ -1,11 +1,14 @@
-import React from 'react'
+/** @format */
+
+import React from "react";
+import Layout from "../Components/Layout";
 
 function Product() {
-    return (
-        <div>
-            Product
-        </div>
-    )
+  return (
+    <Layout>
+      <h3>ds</h3>
+    </Layout>
+  );
 }
 
-export default Product
+export default Product;
