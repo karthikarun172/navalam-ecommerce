@@ -6,11 +6,11 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 
 const navigationRoute = [
-  { id: "1", name: "Dashboard", RouteName: "/", active: true, Logos:LogoutIcon },
-  { id: "2", name: "Customer", RouteName: "/customer", active: false, Logos:LogoutIcon },
-  { id: "3", name: "Product", RouteName: "/product", active: false, Logos:LogoutIcon },
-  { id: "4", name: "Settings", RouteName: "/settings", active: false, Logos:LogoutIcon },
-  { id: "5", name: "Logout", RouteName: "/login", active: false, Logos:LogoutIcon },
+  { id: "1", name: "Dashboard", RouteName: "/", active: true, Logos:<LogoutIcon/>},
+  { id: "2", name: "Customer", RouteName: "/customer", active: false, Logos:<LogoutIcon/> },
+  { id: "3", name: "Product", RouteName: "/product", active: false, Logos:<LogoutIcon/> },
+  { id: "4", name: "Settings", RouteName: "/settings", active: false, Logos:<LogoutIcon/> },
+  { id: "5", name: "Logout", RouteName: "/login", active: false, Logos:<LogoutIcon/> },
 ];
 
 
@@ -37,7 +37,7 @@ function NavBar() {
           </div>   
           )})}
          {navigationRoute.map((navData)=>{
-           <img src={navData.Logos}/>
+           <img src={navData.Logos} />
          })}
         </ul>
       </div>
