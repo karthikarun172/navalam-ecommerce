@@ -4,11 +4,10 @@ import React from "react";
 import NavLink from "./NavLink";
 
 const navigationRoute = [
-  { id: "1", name: "Dashboard", RouteName: false },
-  { id: "2", name: "Dashboard", RouteName: true },
-  { id: "3", name: "Dashboard", RouteName: false },
-  { id: "4", name: "Dashboard", RouteName: false },
-  { id: "5", name: "Dashboard", RouteName: false },
+  { id: "1", name: "Dashboard", RouteName: "/" },
+  { id: "2", name: "Customer", RouteName: "/customer" },
+  { id: "3", name: "Product", RouteName: "/product" },
+  { id: "4", name: "Settings", RouteName: "/settings" },
 ];
 
 function NavBar() {

@@ -1,8 +1,11 @@
 /** @format */
 
 import React from "react";
+import { RiDashboardFill } from "react-icons/ri";
+import { useHistory } from "react-router";
 
 function NavLink({ navData }) {
+  const history = useHistory();
   return (
     <li
       style={{
@@ -15,9 +18,21 @@ function NavLink({ navData }) {
         cursor: "pointer",
         textAlign: "center",
       }}
+      onClick={() => history.push(navData.RouteName)}
       key={navData.id}
     >
-      {navData.name}
+      <div
+        style={{
+          width: "70%",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <RiDashboardFill size={24} />
+        {navData.name}
+      </div>
     </li>
   );
 }
