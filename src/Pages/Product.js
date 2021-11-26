@@ -1,14 +1,12 @@
-/** @format */
-
-import React from "react";
-import Layout from "../Components/Layout";
+import React from 'react'
 
 function Product() {
-  return (
-    <Layout>
-      <h3>ds</h3>
-    </Layout>
-  );
+    return (
+        <div>
+            Product
+        </div>
+    )
 }
 
-export default Product;
+
+export default Product

@@ -1,11 +1,12 @@
 /** @format */
-
 import React from "react";
 import { RiDashboardFill } from "react-icons/ri";
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useHistory, useLocation } from "react-router";
 import { useState } from "react";
+import ApprovalIcon from '@mui/icons-material/Approval';
 
-function NavLink({ navData }) {
+function NavLink({ navData,Logos }) {
   const history = useHistory();
   const location = useLocation();
 
@@ -35,7 +36,9 @@ function NavLink({ navData }) {
           alignItems: "center",
         }}
       >
-        <RiDashboardFill size={24} />
+      {/* <h6>{navData.Logos}</h6> */}
+        {/* <img src={navData.Logos} style={{width:'5%'}}/> */}
+
         <p style={{ paddingLeft: "10px" }}>{navData.name}</p>
       </div>
     </li>
