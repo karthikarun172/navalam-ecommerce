@@ -9,6 +9,8 @@ function Order() {
   return (
     <Layout>
       <h2>sd</h2>
+      <h2>sd</h2>
+      <h2>sd</h2>
     </Layout>
   );
 }
