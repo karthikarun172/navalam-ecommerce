@@ -1,5 +1,4 @@
 /** @format */
-
 import { Button, TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
@@ -8,7 +7,7 @@ import Inputs from "../Components/Controls/Inputs";
 import { useHistory } from "react-router";
 import config from "../config.json";
 import httpService from "../Services/httpService";
-import { useState } from "react";
+import { useState,useRef,createRef,useEffect } from "react";
 import { useLottie } from "lottie-react";
 import * as animationData from "../Assests/LoadingAnimation.json";
 import LoadingAnimation from "../Components/LoadingAnimation";
@@ -30,10 +29,27 @@ const styles = makeStyles((theme) => ({
     },
   },
 }));
+
+
 function Login() {
   const history = useHistory();
   const classes = styles();
   const [Loading, setLoading] = useState(false);
+  const [validating, setValidating] = useState(false);
+  const passwordRef = useRef();
+
+  const FocusInput = () => {
+    const inputEl = createRef()
+ 
+    const focusInput = () => {
+       inputEl.current.focus()
+    }
+  }
+
+  useEffect(()=>{
+    FocusInput();
+    console.log("Focus on HandleSubmit")
+  },[])
 
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
@@ -70,11 +86,13 @@ function Login() {
           setLoading(false);
           localStorage.setItem("token", res.data.access_token);
           localStorage.setItem("userDetails", JSON.stringify(res.data.user));
-          history.push("/product");
+          history.push("/");
+          document.title = "Admin DashBoard"
         })
         .catch((er) => {
           console.log(er);
           setLoading(false);
+          setValidating(true)
         });
     }
   };
@@ -121,8 +139,11 @@ function Login() {
             width: "20%",
           }}
         >
-          {Loading ? (
+        {validating ? (<p style={{color:'red'}}>Invalid Username or Password</p>):(null)}
+          {Loading ? ( 
+            <div>
             <LoadingAnimation />
+            </div>
           ) : (
             <Form
               style={{
@@ -160,4 +181,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login
