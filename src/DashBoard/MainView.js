@@ -1,18 +1,17 @@
 
 import React from 'react';
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect,Router } from "react-router-dom";
 import Sidebar from "./sidebar/Sidebar"
 import Cards from './card/Cards';
 import Product from './product/Product';
+import Topbar from './topbar/Topbar';
 
 const MainView = () => {
     return (
         <div>
-            <Sidebar />
-            <Switch>
-                <Route path="/product" component={Product}/>
-            </Switch>
-            <Cards />
+               <Topbar /> 
+               <Sidebar />
+                <Cards />
         </div>
     )
 }

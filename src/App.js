@@ -1,27 +1,22 @@
 /** @format */
 import Login from "./Pages/Login";
 import Order from "./Pages/Order";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./Components/PrivateRoute";
 import Sidebar from './DashBoard/sidebar/Sidebar';
-// import Product from "./Pages/Product";
-// import Customer from "./Pages/Customer";
-// import Settings from "./Pages/Settings";
 import MainView from './DashBoard/MainView';
-
+import Product from './DashBoard/product/Product';
+import Cards from './DashBoard/card/Cards';
+import Topbar from './DashBoard/topbar/Topbar';
 
 
 function App() {
   return (
     <div>
+      <Route path="/login"  component={Login} />
       <Switch>
-        <Route path="/login"  component={Login} />
+        {/* <PrivateRoute path="/top" component={Topbar} /> */}
         <PrivateRoute path="/" component={MainView} />
-        {/* <PrivateRoute path="/" exact component={Order} /> */}
-        {/* <Route path="/MainView" component={MainView} /> */}
-        {/* <PrivateRoute path="/customer" component={Customer} /> */}
-        {/* <PrivateRoute path="/settings" component={Settings} /> */}
-        {/* <PrivateRoute path="/product" component={Product} /> */}
       </Switch>
     </div>
   );
