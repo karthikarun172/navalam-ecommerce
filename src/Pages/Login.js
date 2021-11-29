@@ -13,7 +13,10 @@ import * as animationData from "../Assests/LoadingAnimation.json";
 import LoadingAnimation from "../Components/LoadingAnimation";
 import Grid from '@mui/material/Grid';
 import CssBaseline from '@mui/material/CssBaseline';
-import Logo from '../Assests/right.png';
+import BackgroundImg from '../Assests/right.png';
+import Logo from '../Assests/LogoGreen.jpeg';
+
+
 
 const initialFValues = {
   email: "",
@@ -28,6 +31,10 @@ const styles = makeStyles((theme) => ({
       backgroundColor: "red",
     },
   },
+  Logo:{
+    width:'110%',
+    marginLeft:'1%'
+  }
 }));
 
 
@@ -36,20 +43,8 @@ function Login() {
   const classes = styles();
   const [Loading, setLoading] = useState(false);
   const [validating, setValidating] = useState(false);
-  const passwordRef = useRef();
+  
 
-  const FocusInput = () => {
-    const inputEl = createRef()
- 
-    const focusInput = () => {
-       inputEl.current.focus()
-    }
-  }
-
-  useEffect(()=>{
-    FocusInput();
-    console.log("Focus on HandleSubmit")
-  },[])
 
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
@@ -120,7 +115,7 @@ function Login() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: `url(${Logo})`,
+            backgroundImage: `url(${BackgroundImg})`,
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -139,12 +134,14 @@ function Login() {
             width: "20%",
           }}
         >
-        {validating ? (<p style={{color:'red'}}>Invalid Username or Password</p>):(null)}
+        <img src={Logo} className={classes.Logo}/>
           {Loading ? ( 
             <div>
             <LoadingAnimation />
             </div>
           ) : (
+            <React.Fragment> 
+              {/* <h2>LOGIN-IN</h2> */}
             <Form
               style={{
                 display: "flex",
@@ -155,7 +152,7 @@ function Login() {
               }}
               onSubmit={handleSubmit}
             >
-              <h2>Login In</h2>
+        {validating ? (<p style={{color:'red'}}>Invalid Username or Password</p>):(null)}
               <Inputs
                 label="Email"
                 name="email"
@@ -174,6 +171,7 @@ function Login() {
                 login 
               </Button>
             </Form>
+            </React.Fragment>
           )}
         </div>
       </div>
