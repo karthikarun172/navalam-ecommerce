@@ -32,7 +32,7 @@ const styles = makeStyles((theme) => ({
     },
   },
   Logo:{
-    width:'110%',
+    width:'120%',
     marginLeft:'1%'
   }
 }));
@@ -141,7 +141,6 @@ function Login() {
             </div>
           ) : (
             <React.Fragment> 
-              {/* <h2>LOGIN-IN</h2> */}
             <Form
               style={{
                 display: "flex",
@@ -153,6 +152,7 @@ function Login() {
               onSubmit={handleSubmit}
             >
         {validating ? (<p style={{color:'red'}}>Invalid Username or Password</p>):(null)}
+              <h2>LOGIN-IN</h2>
               <Inputs
                 label="Email"
                 name="email"
