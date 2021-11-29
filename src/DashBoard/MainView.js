@@ -9,9 +9,12 @@ import Topbar from './topbar/Topbar';
 const MainView = () => {
     return (
         <div>
-               <Topbar /> 
+               <Topbar />
                <Sidebar />
                 <Cards />
+            <Switch>
+                <Route path="/product" component={Product} />    
+            </Switch>    
         </div>
     )
 }

@@ -1,6 +1,13 @@
 .product {
   flex: 4;
   padding: 20px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  margin-left: -377px;
+  margin-top: -50px;
 }
 
 .productTitleContainer {

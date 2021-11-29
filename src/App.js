@@ -15,7 +15,6 @@ function App() {
     <div>
       <Route path="/login"  component={Login} />
       <Switch>
-        {/* <PrivateRoute path="/top" component={Topbar} /> */}
         <PrivateRoute path="/" component={MainView} />
       </Switch>
     </div>
