@@ -152,7 +152,7 @@ function Login() {
               onSubmit={handleSubmit}
             >
         {validating ? (<p style={{color:'red'}}>Invalid Username or Password</p>):(null)}
-              {/* <h2>LOGIN-IN</h2> */}
+              <h4>LOGIN-IN</h4>
               <Inputs
                 type="email"
                 label="Email"

@@ -13,10 +13,10 @@ import Topbar from './DashBoard/topbar/Topbar';
 function App() {
   return (
     <div>
+    <Switch>
       <Route path="/login"  component={Login} />
-      <Switch>
-        <PrivateRoute path="/" component={MainView} />
-      </Switch>
+      <PrivateRoute path="/" component={MainView} />
+    </Switch>  
     </div>
   );
 }
