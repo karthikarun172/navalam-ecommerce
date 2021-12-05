@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 import React from "react";
 import { useForm, Form } from "../CustomHooks/useForm";
 import Inputs from "../Components/Controls/Inputs";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import config from "../config.json";
 import httpService from "../Services/httpService";
 import { useState,useRef,createRef,useEffect } from "react";

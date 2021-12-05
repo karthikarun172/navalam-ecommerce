@@ -2,7 +2,7 @@
 import React from "react";
 import { RiDashboardFill } from "react-icons/ri";
 import LogoutIcon from '@mui/icons-material/Logout';
-import { useHistory, useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
 import ApprovalIcon from '@mui/icons-material/Approval';
 
