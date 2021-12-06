@@ -1,12 +1,5 @@
 .addnewuser {
-  flex: 4;
-  padding: 20px;
   position: absolute;
-  width: 100px;
-  height: 100px;
-  left: 50%;
-  top: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 30%;
+  top: 20%;
 }

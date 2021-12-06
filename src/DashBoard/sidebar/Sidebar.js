@@ -44,12 +44,12 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-            {/* <Link  className="link"> */}
+            <Link  className="link" to='/customerlist'>
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                Customers
               </li>
-            {/* </Link> */}
+            </Link>
             <Link to='/product' className="link">
               <li className="sidebarListItem" >
                 <Storefront className="sidebarIcon" />
