@@ -7,6 +7,7 @@ import Product from './product/Product';
 import Topbar from './topbar/Topbar';
 import Settings from './settings/Settings';
 import AddUser from './adduser/AddUser';
+import AddNewUser from './adduser/AddNewUser';
 
 
 const MainView = () => {
@@ -16,8 +17,8 @@ const MainView = () => {
                <Sidebar />
                 {/* <Cards /> */}
             <Switch>
+                <Route path="/addnewuser" component={AddNewUser} />
                 <Route path="/settings" component={Settings} />    
-                <Route path={"/adduser"} component={AddUser} />
                 <Route path="/product" component={Product} />
             </Switch>    
         </div>
