@@ -4,7 +4,7 @@ import { NotificationsNone, Language, Settings } from  "@mui/icons-material";
 import LogoutIcon from '@mui/icons-material/Logout';
 import LogOutModal from '../modal/LogOutModal';
 // import { useNavigate } from 'react-router';
-
+import Cards from "../card/Cards";
 
 const Topbar = () => {
 
@@ -48,7 +48,7 @@ const Topbar = () => {
               <LogoutIcon onClick={()=>handleClickOpen()} />
             </div>
             <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
-          </div>
+          </div>  
         </div>
             <LogOutModal 
             openIt={openModal} 

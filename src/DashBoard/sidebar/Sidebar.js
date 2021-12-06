@@ -11,9 +11,12 @@ import {
   DynamicFeed,
   ChatBubbleOutline,
   WorkOutline,
-  Report,
+  Report
 } from "@mui/icons-material";
+import SettingsIcon from '@mui/icons-material/Settings';
 import { Link } from "react-router-dom";
+
+
 
 export default function Sidebar() {
   return (
@@ -44,7 +47,7 @@ export default function Sidebar() {
             {/* <Link  className="link"> */}
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
-                Users
+               Customers
               </li>
             {/* </Link> */}
             <Link to='/product' className="link">
@@ -53,47 +56,15 @@ export default function Sidebar() {
                 Products
               </li>
             </Link>
+            <Link to='/settings' className="link">
             <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              Transactions
+              <SettingsIcon className="sidebarIcon" />
+              Settings
             </li>
+            </Link>
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
-              Reports
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Notifications</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <MailOutline className="sidebarIcon" />
-              Mail
-            </li>
-            <li className="sidebarListItem">
-              <DynamicFeed className="sidebarIcon" />
-              Feedback
-            </li>
-            <li className="sidebarListItem">
-              <ChatBubbleOutline className="sidebarIcon" />
-              Messages
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Staff</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <WorkOutline className="sidebarIcon" />
-              Manage
-            </li>
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              <Report className="sidebarIcon" />
-              Reports
+             Orders
             </li>
           </ul>
         </div>
