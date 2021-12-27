@@ -26,15 +26,15 @@ export default function Sidebar() {
 
   return (
 <React.Fragment>
-{/* <img src={Logo} className="Logo" /> */}
+<img src={Logo} className="Logo" />
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <Link to="/" >
+            <Link to="/" className="link">
             <li className="sidebarListItem active">
-              <DashboardIcon className="sidebarIcon" onClick={()=>{history.push("/")}} />
+              <DashboardIcon className="sidebarIcon" />
               Home
             </li>
             </Link>
