@@ -1,10 +1,11 @@
 .sidebar {
-  background-color: rgb(233, 233, 241);
+  background-color: #30412f;
   flex: 1;
   height: calc(100vh - 0px);
   position: sticky;
   top: 60px;
   display: inline-flex;
+  border-radius: 16px;
 }
 
 .sidebarWrapper {
@@ -19,7 +20,7 @@
 .sidebarTitle {
   font-size: 13px;
   /* color: rgb(189, 53, 53); */
-  color: blue;
+  color: #dacbae;
 }
 
 .sidebarList {
@@ -43,4 +44,10 @@
 .sidebarIcon {
   margin-right: 5px;
   font-size: 20px !important;
+}
+
+.Logo {
+  width: 15%;
+  display: flex;
+  position: relative;
 }

@@ -1,14 +1,16 @@
 .topbar {
-  width: 100%;
-  height: 50px;
-  background-color: rgb(202, 233, 238);
+  width: 86%;
+  margin-left: 14%;
+  height: 75px;
+  background-color: #30412f;
   position: sticky;
   top: 0;
   z-index: 999;
+  border-radius: 16px;
 }
 
 .topbarWrapper {
-  height: 100%;
+  height: 110%;
   padding: 0px 20px;
   display: flex;
   align-items: center;
@@ -18,7 +20,7 @@
 .logo {
   font-weight: bold;
   font-size: 20px;
-  color: rgb(33, 65, 37);
+  color: rgb(214, 230, 216);
   cursor: pointer;
 }
 
@@ -49,9 +51,18 @@
   font-size: 10px;
 }
 
-.topAvatar {
+/* .topAvatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+} */
+
+.MuiIcon {
+  color: aliceblue;
+  margin-left: -60%;
 }
+
+/* .Logo {
+  width: 50px;
+} */

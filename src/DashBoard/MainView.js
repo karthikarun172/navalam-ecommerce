@@ -15,7 +15,6 @@ const MainView = () => {
         <div>
                <Topbar />
                <Sidebar />
-                {/* <Cards /> */}
             <Switch>
                 <Route path="/customerlist" component={CustomerList} />
                 <Route path="/addnewuser" component={AddNewUser} />
