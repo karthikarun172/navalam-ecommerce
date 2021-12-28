@@ -29,7 +29,6 @@ const Topbar = () => {
 
     return (
     <React.Fragment> 
-    {/* <img src={Logo} alt="" className="Logo" />     */}
         <div className="topbar">
         <div className="topbarWrapper">
           <div className="topLeft">

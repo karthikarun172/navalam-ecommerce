@@ -1,4 +1,5 @@
 {
     "apiEndPoint":"https://nalvanam.2kd2.in/api",
-    "productDataApi":"https://jsonplaceholder.typicode.com/users"
+    "fakeProductApi":"https://fakestoreapi.com/products",
+    "fakeUsersApi":"https://jsonplaceholder.typicode.com/users"
 }

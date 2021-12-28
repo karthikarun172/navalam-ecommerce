@@ -34,8 +34,8 @@ const useStyles = makeStyles({
     },
   },
   Dialog: {
-    maxWidth: "none",
-    position: "absolute",
+    maxWidth: "lg",
+    position: "relative",
     width: "100%",
     height: "100%",
   },
@@ -73,6 +73,7 @@ const LogOutModal = ({ openIt, closeIt }) => {
         onClose={handleClose}
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
+        PaperProps={{sx:"30%",height:"50%"}}
       >
         <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
           LOGOUT
