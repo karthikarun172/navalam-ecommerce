@@ -87,7 +87,7 @@ const classes = styles();
                     <TableCell>{d.title}</TableCell>
                     <TableCell>{d.price}</TableCell>
                   <TableCell><Button color="primary" variant="contained">Edit</Button></TableCell>
-                  <TableCell> <Button color='error' variant="contained" onClick={DeleteProduct}>Delete</Button></TableCell>
+                  <TableCell> <Button color='error' variant="contained" onClick={()=>alert('Delete')}>Delete</Button></TableCell>
                 </TableRow>
               )
             })

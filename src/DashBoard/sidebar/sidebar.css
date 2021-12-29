@@ -5,7 +5,7 @@
   top: 60px;
   display: inline-flex;
   border-radius: 16px;
-  margin-top: 9.5%;
+  margin-top: 10%;
   position: fixed;
   width: 173px;
 }
@@ -16,11 +16,11 @@
 }
 
 .sidebarMenu {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .sidebarTitle {
-  font-size: 13px;
+  font-size: 19px;
   color: #dacbae;
 }
 
@@ -37,11 +37,17 @@
   border-radius: 10px;
   text-decoration: none;
   color: whitesmoke;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-.sidebarListItem.active,
+.sidebarListItem.activeItem,
 .sidebarListItem:hover {
   background-color: #dacbae;
+  border-radius: 60px 5px 5px 70px;
+  width: 150px;
+  height: 30px;
+  margin-left: -7%;
 }
 
 .sidebarIcon {
@@ -56,7 +62,7 @@
   display: flex;
   position: fixed;
   border: 5px solid #30412f;
-  margin-top: -5.2%;
+  margin-top: 1%;
 }
 
 .link {
