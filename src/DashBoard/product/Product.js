@@ -24,7 +24,7 @@ const styles =  makeStyles((theme)=>({
     // textAlign:'center',
     position:'absolute',
     left:'40%',
-    top:'10%',
+    top:'13%',
     flex:'1'
   },
       mainTable:{
@@ -49,8 +49,18 @@ const ApiCalling = async() => {
 
 useEffect(()=>{
     ApiCalling();
+    DeleteProduct();
     console.log('Product is loaded here')
 },[]);
+
+const DeleteProduct = async(post)=> {
+
+  // await axios.delete(config.fakeProductApi + '/' + post.id);
+  // const deleteId = apidata.filter(p => p.id !== post.id);
+  // setApidata(deleteId);
+  console.log('Delete ID -->',apidata)
+}
+
 
 const classes = styles();
     return (
@@ -77,7 +87,7 @@ const classes = styles();
                     <TableCell>{d.title}</TableCell>
                     <TableCell>{d.price}</TableCell>
                   <TableCell><Button color="primary" variant="contained">Edit</Button></TableCell>
-                  <TableCell> <Button color='error' variant="contained">Delete</Button></TableCell>
+                  <TableCell> <Button color='error' variant="contained" onClick={DeleteProduct}>Delete</Button></TableCell>
                 </TableRow>
               )
             })
