@@ -24,14 +24,20 @@ const styles =  makeStyles((theme)=>({
     // textAlign:'center',
     position:'absolute',
     left:'40%',
-    top:'13%',
+    top:'10%',
     flex:'1'
   },
       mainTable:{
         border:"5px green solid",
-        width:"80%",
-        marginLeft:'15%'
-      }      
+        width:"70%",
+        position:'absolute',
+        height:'50%',
+        top:'30%',
+        marginLeft:'20%'
+      },
+         tableHeads:{
+           backgroundColor:'orange'
+         }
 }));
 
 
@@ -55,9 +61,9 @@ useEffect(()=>{
 
 const DeleteProduct = async(post)=> {
 
-  // await axios.delete(config.fakeProductApi + '/' + post.id);
-  // const deleteId = apidata.filter(p => p.id !== post.id);
-  // setApidata(deleteId);
+  await axios.delete(config.fakeProductApi + '/' + post.id);
+  const deleteId = apidata.filter(p => p.id !== post.id);
+  setApidata(deleteId);
   console.log('Delete ID -->',apidata)
 }
 
@@ -69,7 +75,7 @@ const classes = styles();
     <TableContainer className={classes.mainTable}>
        <Table  aria-label="simple table">
            <TableHead>
-             <TableRow  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+             <TableRow className={classes.tableHeads}>
                <TableCell>ID</TableCell>
                <TableCell>TITLE</TableCell>
                <TableCell>PRICE</TableCell>
