@@ -61,9 +61,9 @@ useEffect(()=>{
 
 const DeleteProduct = async(post)=> {
 
-  await axios.delete(config.fakeProductApi + '/' + post.id);
-  const deleteId = apidata.filter(p => p.id !== post.id);
-  setApidata(deleteId);
+  // await axios.delete(config.fakeProductApi + '/' + post.id);
+  // const deleteId = apidata.filter(p => p.id !== post.id);
+  // setApidata(deleteId);
   console.log('Delete ID -->',apidata)
 }
 
