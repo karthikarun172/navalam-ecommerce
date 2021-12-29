@@ -17,6 +17,8 @@ import {
   Paper,
   Button
 } from '@mui/material';
+import { title } from 'process';
+import AddProduct from './AddProduct';
 
 
 const styles =  makeStyles((theme)=>({
@@ -37,7 +39,13 @@ const styles =  makeStyles((theme)=>({
       },
          tableHeads:{
            backgroundColor:'orange'
-         }
+         },
+      form:{
+        backgroundColor:'green',
+        position:'absolute',
+        left:'40%',
+        top:'10%',
+      }
 }));
 
 
@@ -55,23 +63,54 @@ const ApiCalling = async() => {
 
 useEffect(()=>{
     ApiCalling();
+    console.log('Product is loaded here');
     DeleteProduct();
-    console.log('Product is loaded here')
 },[]);
 
-const DeleteProduct = async(post)=> {
+const DeleteProduct = async(id) => {
 
-  // await axios.delete(config.fakeProductApi + '/' + post.id);
-  // const deleteId = apidata.filter(p => p.id !== post.id);
-  // setApidata(deleteId);
-  console.log('Delete ID -->',apidata)
+  try{
+    console.log("delete starts")
+    // const deleteId = apidata.filter(f => f.id !== id.id );
+    // await axios.delete(`${config.fakeProductApi}/${id.id}`);
+    // setApidata(deleteId);
+    // console.log('Delete ID -->',apidata)
+  }
+  catch(ex){
+    alert('Cannot be deleted please try again');
+  } 
 }
+
+const AddProductData = async()=>{
+    await fetch(config.fakeProductApi, {
+      method : "POST",
+      body: JSON.stringify({
+        title:title,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+    .then((res)=>{
+      if (res.status !== 201){
+        return
+      }else{
+        res.json();
+      }
+    })
+    .then((data)=>{
+      setApidata((apidata)=>[...apidata,data])
+    }).catch((err)=>{
+      console.log("Posting Error")
+    })
+ }
 
 
 const classes = styles();
     return (
         <React.Fragment>
-    <h1 className={classes.heading}>PRODUCT LIST</h1>    
+    <h1 className={classes.heading}>PRODUCT LIST</h1>  
+   
     <TableContainer className={classes.mainTable}>
        <Table  aria-label="simple table">
            <TableHead>
@@ -93,7 +132,7 @@ const classes = styles();
                     <TableCell>{d.title}</TableCell>
                     <TableCell>{d.price}</TableCell>
                   <TableCell><Button color="primary" variant="contained">Edit</Button></TableCell>
-                  <TableCell> <Button color='error' variant="contained" onClick={()=>alert('Delete')}>Delete</Button></TableCell>
+                  <TableCell> <Button color='error' variant="contained" onClick={()=>DeleteProduct}>Delete</Button></TableCell>
                 </TableRow>
               )
             })
@@ -101,6 +140,9 @@ const classes = styles();
         </TableBody>
        </Table>  
     </TableContainer>    
+    <AddProduct 
+      AddProductData={AddProductData}
+    />
         </React.Fragment>
     )
 }
