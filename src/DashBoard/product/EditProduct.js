@@ -1,12 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Redirect,useHistory } from 'react-router-dom'
 
-const AddProduct = ({ AddProductData }) => {
+const EditProduct = () => {
+
+    const history = useHistory();
 
     const handleSubmit =(e)=>{
         e.preventDefault();
-        AddProductData(e.target.title.value,e.target.price.value);
-        e.target.title.value = "";
-        e.target.price.value = "";
+        // AddProductData(e.target.title.value,e.target.price.value,e.target.id.value);
+        // e.target.id.value = "";
+        // e.target.title.value = "";
+        // e.target.price.value = "";
+       history.push("/product");
      }
 
     return (
@@ -17,6 +22,8 @@ const AddProduct = ({ AddProductData }) => {
         }}>
             <form onSubmit={handleSubmit}>
             <p>add user</p>
+            
+                 <input placeholder='Enter ID' name="title"/>   
                  <input placeholder='Enter Title' name="title"/>   
                  <input placeholder='Enter Price' name='price'/>
                  <button onSubmit={handleSubmit}>Add user</button> 
@@ -26,4 +33,4 @@ const AddProduct = ({ AddProductData }) => {
     )
 }
 
-export default AddProduct
+export default EditProduct;

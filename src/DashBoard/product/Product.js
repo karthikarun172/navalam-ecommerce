@@ -1,8 +1,10 @@
 import './product.css';
 import React,{useEffect,useState} from 'react'
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect,useHistory } from "react-router-dom";
 import axios from 'axios';
+import {Toastify} from 'react-toastify';
 import config from '../../config.json';
+import https from '../../Services/httpService'
 
 import EditIcon from '@mui/icons-material/Edit';
 import { DataGrid } from '@mui/x-data-grid';
@@ -17,13 +19,11 @@ import {
   Paper,
   Button
 } from '@mui/material';
-import { title } from 'process';
-import AddProduct from './AddProduct';
+import EditProduct from './EditProduct';
 
 
 const styles =  makeStyles((theme)=>({
   heading:{
-    // textAlign:'center',
     position:'absolute',
     left:'40%',
     top:'10%',
@@ -53,86 +53,67 @@ const styles =  makeStyles((theme)=>({
 const Product = () => {
 
 const [apidata, setApidata] = useState([]);
+const [dumyApi,DumyApi] = useState([]);
     
 
 const ApiCalling = async() => {
-    const getData = await axios.get(config.fakeProductApi);
+    const getData = await https.get(config.fakeUsersApi);
     setApidata(getData.data)
-    console.log(getData.data)
 }
+
 
 useEffect(()=>{
     ApiCalling();
     console.log('Product is loaded here');
-    DeleteProduct();
+    // DeleteProduct();
 },[]);
 
-const DeleteProduct = async(id) => {
 
-  try{
-    console.log("delete starts")
-    // const deleteId = apidata.filter(f => f.id !== id.id );
-    // await axios.delete(`${config.fakeProductApi}/${id.id}`);
-    // setApidata(deleteId);
-    // console.log('Delete ID -->',apidata)
-  }
-  catch(ex){
-    alert('Cannot be deleted please try again');
-  } 
+
+const DeleteProduct = async post =>{
+  // const filteringmap = [...apidata]
+  // const removingApi = filteringmap.filter(p => p.id !== post);
+  console.log('delete',post);
+
+  await https.delete(config.fakeUsersApi + '/' + post.id);
+  const filterMosh = apidata.filter(f => f.id !== post.id)
+  setApidata(filterMosh); 
 }
 
-const AddProductData = async()=>{
-    await fetch(config.fakeProductApi, {
-      method : "POST",
-      body: JSON.stringify({
-        title:title,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-    })
-    .then((res)=>{
-      if (res.status !== 201){
-        return
-      }else{
-        res.json();
-      }
-    })
-    .then((data)=>{
-      setApidata((apidata)=>[...apidata,data])
-    }).catch((err)=>{
-      console.log("Posting Error")
-    })
- }
 
+
+const EditProduct=()=>{
+   history.push("/editproduct")
+}
 
 const classes = styles();
+const history = useHistory();
+
     return (
         <React.Fragment>
     <h1 className={classes.heading}>PRODUCT LIST</h1>  
-   
     <TableContainer className={classes.mainTable}>
        <Table  aria-label="simple table">
            <TableHead>
              <TableRow className={classes.tableHeads}>
                <TableCell>ID</TableCell>
-               <TableCell>TITLE</TableCell>
-               <TableCell>PRICE</TableCell>
+               <TableCell>USERNAME</TableCell>
+               <TableCell>NAME</TableCell>
                <TableCell>EDIT</TableCell>
                <TableCell>DELETE</TableCell>
              </TableRow>
            </TableHead> 
-
         <TableBody>
           {
             apidata.map((d,i)=>{
               return(
                 <TableRow key={i}>
+                   
                     <TableCell>{d.id}</TableCell>
-                    <TableCell>{d.title}</TableCell>
-                    <TableCell>{d.price}</TableCell>
-                  <TableCell><Button color="primary" variant="contained">Edit</Button></TableCell>
-                  <TableCell> <Button color='error' variant="contained" onClick={()=>DeleteProduct}>Delete</Button></TableCell>
+                    <TableCell>{d.username}</TableCell>
+                    <TableCell>{d.name}</TableCell>
+                  <TableCell><Button color="primary" variant="contained" onClick={EditProduct}>Edit</Button></TableCell>
+                  <TableCell> <Button color='error' variant="contained" onClick={()=>DeleteProduct(d)}>Delete</Button></TableCell>
                 </TableRow>
               )
             })
@@ -140,9 +121,6 @@ const classes = styles();
         </TableBody>
        </Table>  
     </TableContainer>    
-    <AddProduct 
-      AddProductData={AddProductData}
-    />
         </React.Fragment>
     )
 }
